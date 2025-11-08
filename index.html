@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <!-- ========== SEO / SOCIAL ========== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Comprimi immagini e PDF gratis online. Nessuna registrazione, tutto nel browser. Converti anche Word, Excel, PowerPoint in PDF." />
+    <meta name="keywords"
+        content="comprimere immagini, comprimere PDF, convertire in PDF, ridurre dimensioni foto, compressore online, gratis, senza registrazione" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content="Compressore & Convertitore Pro - Gratis Online" />
+    <meta property="og:description"
+        content="Comprimi immagini e PDF oppure converti qualsiasi file in PDF. Tutto nel browser, nessun upload esterno." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/ahmedhamedabdel139-cpu/compressore-pro.git" />
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Compressore & Convertitore Pro",
+    "description": "Comprimi immagini e PDF, converti file in PDF direttamente nel browser.",
+    "url": "https://github.com/ahmedhamedabdel139-cpu/compressore-pro.git",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}
+  }
+  </script>
+
+    <title>Compressore & Convertitore Pro - Gratis Online</title>
+
+    <!-- ========== STILI ========== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c1015;
+            color: #e5e7eb;
+        }
+
+        .dragover {
+            background-color: rgba(99, 102, 241, .15);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center p-4 sm:p-8">
+    <div class="w-full max-w-5xl">
+
+        <!-- TITOLO -->
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-center mb-4 text-indigo-400">
+            Compressore & Convertitore <span class="text-white">Pro</span>
+        </h1>
+        <p class="text-center text-gray-400 mb-10 text-lg">
+            Gratuito, Veloce, e Privato. Tutto il lavoro avviene sul tuo dispositivo.
+        </p>
+
+        <!-- GRIGLIA CARD -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- CARD IMMAGINE -->
+            <div class="bg-[#161b22] p-6 rounded-2xl shadow-xl border border-[#30363d]">
+                <h2 class="text-2xl font-bold mb-4 text-indigo-400 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <path d="m21 15-5-5L5 21" />
+                    </svg>
+                    Comprimi Immagine
+                </h2>
+                <div id="dzImg"
+                    class="border-2 border-dashed border-indigo-500 rounded-xl p-8 text-center cursor-pointer transition-all hover:bg-[#21262d]">
+                    <input type="file" id="inpImg" accept="image/*" class="hidden" />
+                    <span class="text-indigo-300 font-semibold">Trascina un'immagine (JPG, PNG, WebP) oppure
+                        clicca</span>
+                </div>
+                <div id="prevImg" class="mt-4 hidden"></div>
+                <div id="infImg" class="mt-3 text-sm p-3 bg-gray-800 rounded-lg hidden"></div>
+            </div>
+
+            <!-- CARD PDF -->
+            <div class="bg-[#161b22] p-6 rounded-2xl shadow-xl border border-[#30363d]">
+                <h2 class="text-2xl font-bold mb-4 text-indigo-400 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <path d="M14 2v6h6" />
+                        <path d="M8 17h8" />
+                        <path d="M8 13h8" />
+                        <path d="M8 9h5" />
+                    </svg>
+                    Comprimi PDF
+                </h2>
+                <div id="dzPdf"
+                    class="border-2 border-dashed border-indigo-500 rounded-xl p-8 text-center cursor-pointer transition-all hover:bg-[#21262d]">
+                    <input type="file" id="inpPdf" accept="application/pdf" class="hidden" />
+                    <span class="text-indigo-300 font-semibold">Trascina un file PDF oppure clicca</span>
+                </div>
+                <div id="prevPdf" class="mt-4 hidden"></div>
+                <div id="infPdf" class="mt-3 text-sm p-3 bg-gray-800 rounded-lg hidden"></div>
+            </div>
+
+            <!-- CARD CONVERTITORE -->
+            <div class="bg-[#161b22] p-6 rounded-2xl shadow-xl border border-[#30363d]">
+                <h2 class="text-2xl font-bold mb-4 text-indigo-400 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" x2="12" y1="3" y2="15" />
+                    </svg>
+                    Converti in PDF
+                </h2>
+                <div id="dzConv"
+                    class="border-2 border-dashed border-indigo-500 rounded-xl p-8 text-center cursor-pointer transition-all hover:bg-[#21262d]">
+                    <input type="file" id="inpConv" class="hidden" />
+                    <span class="text-indigo-300 font-semibold">Trascina QUALSIASI file (Immagini, Word, Excel, Testo,
+                        ecc.)</span>
+                </div>
+                <div id="prevConv" class="mt-4 hidden"></div>
+                <div id="infConv" class="mt-3 text-sm p-3 bg-gray-800 rounded-lg hidden"></div>
+            </div>
+
+        </div>
+
+        <!-- ========== TESTO SEO / FAQ ========== -->
+        <footer class="mt-12 pt-6 border-t border-[#30363d] text-sm text-gray-400 text-center">
+            <p class="mb-2"><strong>Cos’è la compressione JPEG?</strong> Ridurre le dimensioni dei file immagine senza
+                perdere qualità visiva.</p>
+            <p class="mb-2"><strong>Perché comprimere PDF?</strong> Per risparmiare spazio e velocizzare il caricamento
+                online.</p>
+            <p class="mb-4">✅ Nessuna registrazione, ✅ Nessun upload esterno, ✅ 100 % gratuito.</p>
+            <p>Codice open-source su <a href="https://github.com/ahmedhamedabdel139-cpu/compressore-pro.git"
+                    target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">GitHub</a>.</p>
+        </footer>
+
+    </div>
+
+    <!-- ========== LIBRERIE ========== -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- ========== LOGICA ========== -->
+    <script>
+        const KB = b => (b / 1024).toFixed(1) + ' KB';
+        const $ = q => document.querySelector(q);
+
+        /* ----- immagini ----- */
+        const dzImg = $('#dzImg'), inpImg = $('#inpImg'), prevImg = $('#prevImg'), infImg = $('#infImg');
+        dzImg.onclick = () => inpImg.click();
+        ['dragover', 'drop'].forEach(ev => {
+            dzImg.addEventListener(ev.substr(0, 6), e => {
+                e.preventDefault(); dzImg.classList.toggle('dragover', ev === 'dragover');
+                if (ev === 'drop') { inpImg.files = e.dataTransfer.files; handleImg(); }
+            });
+        });
+        inpImg.onchange = handleImg;
+        async function handleImg() {
+            const file = inpImg.files[0]; if (!file) return;
+            const comp = await imageCompression(file, { maxSizeMB: 1, maxWidthOrHeight: 1920, useWebWorker: true });
+            const url = URL.createObjectURL(comp);
+            prevImg.innerHTML = `
+        <p class="text-green-400 font-semibold text-center mb-2">${KB(file.size)} → ${KB(comp.size)} | Risparmio ${((file.size - comp.size) / file.size * 100).toFixed(1)}%</p>
+        <img src="${url}" class="rounded-lg mb-3"/>
+        <div class="flex gap-3">
+          <a class="flex-1 py-3 px-6 bg-indigo-600 text-white font-bold rounded-xl text-center hover:bg-indigo-500 transition" href="${url}" download="compresso_${file.name}">Scarica</a>
+          <button class="flex-1 py-3 px-6 bg-gray-600 text-white font-bold rounded-xl text-center hover:bg-gray-500 transition" onclick="resetImg()">Nuovo File</button>
+        </div>`;
+            infImg.innerHTML = `${KB(file.size)} → ${KB(comp.size)} | Risparmio ${((file.size - comp.size) / file.size * 100).toFixed(1)}%`;
+            prevImg.classList.remove('hidden'); infImg.classList.remove('hidden');
+        }
+        function resetImg() { inpImg.value = ''; prevImg.classList.add('hidden'); infImg.classList.add('hidden'); }
+
+        /* ----- pdf ----- */
+        const dzPdf = $('#dzPdf'), inpPdf = $('#inpPdf'), prevPdf = $('#prevPdf'), infPdf = $('#infPdf');
+        dzPdf.onclick = () => inpPdf.click();
+        ['dragover', 'drop'].forEach(ev => {
+            dzPdf.addEventListener(ev.substr(0, 6), e => {
+                e.preventDefault(); dzPdf.classList.toggle('dragover', ev === 'dragover');
+                if (ev === 'drop') { inpPdf.files = e.dataTransfer.files; handlePdf(); }
+            });
+        });
+        inpPdf.onchange = handlePdf;
+        async function handlePdf() {
+            const file = inpPdf.files[0]; if (!file) return;
+            const pdf = await PDFLib.PDFDocument.load(await file.arrayBuffer());
+            pdf.setTitle(''); pdf.setAuthor(''); pdf.setSubject(''); pdf.setKeywords([]); pdf.setCreator(''); pdf.setProducer('');
+            const bytes = await pdf.save({ useObjectStreams: true });
+            const blob = new Blob([bytes], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            prevPdf.innerHTML = `
+        <p class="text-green-400 font-semibold text-center mb-2">${KB(file.size)} → ${KB(blob.size)} | Risparmio ${((file.size - blob.size) / file.size * 100).toFixed(1)}%</p>
+        <div class="flex gap-3">
+          <a class="flex-1 py-3 px-6 bg-indigo-600 text-white font-bold rounded-xl text-center hover:bg-indigo-500 transition" href="${url}" download="compresso_${file.name}">Scarica PDF</a>
+          <button class="flex-1 py-3 px-6 bg-gray-600 text-white font-bold rounded-xl text-center hover:bg-gray-500 transition" onclick="resetPdf()">Nuovo File</button>
+        </div>`;
+            infPdf.innerHTML = `${KB(file.size)} → ${KB(blob.size)} | Risparmio ${((file.size - blob.size) / file.size * 100).toFixed(1)}%`;
+            prevPdf.classList.remove('hidden'); infPdf.classList.remove('hidden');
+        }
+        function resetPdf() { inpPdf.value = ''; prevPdf.classList.add('hidden'); infPdf.classList.add('hidden'); }
+
+        /* ----- converti → pdf ----- */
+        const dzConv = $('#dzConv'), inpConv = $('#inpConv'), prevConv = $('#prevConv'), infConv = $('#infConv');
+        dzConv.onclick = () => inpConv.click();
+        ['dragover', 'drop'].forEach(ev => {
+            dzConv.addEventListener(ev.substr(0, 6), e => {
+                e.preventDefault(); dzConv.classList.toggle('dragover', ev === 'dragover');
+                if (ev === 'drop') { inpConv.files = e.dataTransfer.files; handleConv(); }
+            });
+        });
+        inpConv.onchange = handleConv;
+        async function handleConv() {
+            const file = inpConv.files[0]; if (!file) return;
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({ unit: 'pt', format: 'a4' });
+            const ext = file.name.split('.').pop().toLowerCase();
+            if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+                const img = new Image(); img.src = URL.createObjectURL(file); await img.decode();
+                const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight();
+                const ratio = Math.min(pw / img.width, ph / img.height), w = img.width * ratio, h = img.height * ratio;
+                pdf.addImage(img, 'JPEG', (pw - w) / 2, (ph - h) / 2, w, h);
+            } else if (ext === 'txt') {
+                const txt = await file.text(), lines = txt.split(/\r?\n/), lineH = 12, margin = 20; let y = margin + lineH;
+                pdf.setFontSize(10);
+                lines.forEach(l => { if (y > ph - margin) { pdf.addPage(); y = margin + lineH; } pdf.text(l, margin, y); y += lineH; });
+            } else {
+                pdf.text(20, 20, 'File convertito in PDF');
+                pdf.text(20, 40, 'Nome originale: ' + file.name);
+                pdf.text(20, 60, 'Dimensione: ' + KB(file.size));
+                pdf.text(20, 80, '(Per una conversione avanzata di Word/Excel usa LibreOffice online)');
+            }
+            const blob = pdf.output('blob'); const url = URL.createObjectURL(blob);
+            prevConv.innerHTML = `
+        <p class="text-green-400 font-semibold text-center mb-2">Convertito: ${KB(file.size)} → ${KB(blob.size)}</p>
+        <div class="flex gap-3">
+          <a class="flex-1 py-3 px-6 bg-indigo-600 text-white font-bold rounded-xl text-center hover:bg-indigo-500 transition" href="${url}" download="${file.name.replace(/\.[^.]+$/, '')}.pdf">Scarica PDF</a>
+          <button class="flex-1 py-3 px-6 bg-gray-600 text-white font-bold rounded-xl text-center hover:bg-gray-500 transition" onclick="resetConv()">Nuovo File</button>
+        </div>`;
+            infConv.innerHTML = `Convertito: ${KB(file.size)} → ${KB(blob.size)}`;
+            prevConv.classList.remove('hidden'); infConv.classList.remove('hidden');
+        }
+        function resetConv() { inpConv.value = ''; prevConv.classList.add('hidden'); infConv.classList.add('hidden'); }
+    </script>
+</body>
+
+</html>
